@@ -13,31 +13,34 @@
 **                     sediment_estuary_test.in
 */
 
-#define UV_ADV
 #define UV_LOGDRAG
-#define SPLINES_VDIFF
-#define SPLINES_VVISC
-#define TS_U3HADVECTION
-#define TS_C4VADVECTION
+#define UV_ADV
+#define UV_COR
+
+
+
+#define TS_MPDATA
+#undef NONLIN_EOS
 #define SALINITY
 #define MASKING
 #define SOLVE3D
-
-
-#undef UV_COR
+#define SPLINES_VDIFF
+#define SPLINES_VVISC
+#undef T_PASSIVE
+#define FLOATS
 
 #undef RADIATION_2D
 
 #define ANA_SMFLUX
-#define ANA_STFLUX
-#define ANA_BTFLUX
+#define ANA_SRFLUX
 #define ANA_SSFLUX
+#define ANA_STFLUX
 #define ANA_BSFLUX
-#define ANA_SPFLUX
-#define ANA_BPFLUX
+#define ANA_BTFLUX
 #define ANA_FSOBC
 #define ANA_M2OBC
-#define ANA_TOBC
+#define ANA_SPFLUX
+#define ANA_BPFLUX
 
 #undef SPONGE
 #ifdef SPONGE
@@ -50,7 +53,7 @@
 #endif
 
 
-
+#define GLS_MIXING
 #if defined GLS_MIXING || defined MY25_MIXING
 # undef CANUTO_A
 # define N2S2_HORAVG
@@ -64,6 +67,12 @@
 # define SED_DENS
 #endif
 
+
+#define DIAGNOSTICS_UV
+#define DIAGNOSTICS_TS
+#define AVERAGES
+#undef AVERAGES_AKV
+#undef AVERAGES_AKS
 
 #undef  SG_BBL
 #ifdef SG_BBL

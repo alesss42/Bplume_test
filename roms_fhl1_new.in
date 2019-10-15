@@ -145,28 +145,28 @@ GridsInLayer =  1
 !
 !                   1       2       3       4
 
-   LBC(isFsur) ==   Clo     Clo     Clo     Clo         ! free-surface
-   LBC(isUbar) ==   Clo     Clo     Clo     Clo         ! 2D U-momentum
-   LBC(isVbar) ==   Clo     Clo     Clo     Clo         ! 2D V-momentum
-   LBC(isUvel) ==   Clo     Clo     Clo     Clo         ! 3D U-momentum
-   LBC(isVvel) ==   Clo     Clo     Clo     Clo         ! 3D V-momentum
-   LBC(isMtke) ==   Clo     Clo     Clo     Clo	         ! mixing TKE
+   LBC(isFsur) ==   Clo     Clo     Clo     Cha         ! free-surface
+   LBC(isUbar) ==   Clo     Clo     Clo     Fla         ! 2D U-momentum
+   LBC(isVbar) ==   Clo     Clo     Clo     Fla         ! 2D V-momentum
+   LBC(isUvel) ==   Clo     Clo     Clo     Rad         ! 3D U-momentum
+   LBC(isVvel) ==   Clo     Clo     Clo     Rad         ! 3D V-momentum
+   LBC(isMtke) ==   Clo     Clo     Clo     Rad	         ! mixing TKE
 
-   LBC(isTvar) ==   Clo     Clo     Clo     Clo \       ! temperature
-                    Clo     Clo     Clo     Clo          ! salinity
+   LBC(isTvar) ==   Clo     Clo     Clo     Rad \       ! temperature
+                    Clo     Clo     Clo     Rad          ! salinity
 
 ! Adjoint-based algorithms can have different lateral boundary
 ! conditions keywords.
 
-ad_LBC(isFsur) ==   Clo     Clo     Clo     Clo         ! free-surface
-ad_LBC(isUbar) ==   Clo     Clo     Clo     Clo         ! 2D U-momentum
-ad_LBC(isVbar) ==   Clo     Clo     Clo     Clo         ! 2D V-momentum
-ad_LBC(isUvel) ==   Clo     Clo     Clo     Clo         ! 3D U-momentum
-ad_LBC(isVvel) ==   Clo     Clo     Clo     Clo         ! 3D V-momentum
-ad_LBC(isMtke) ==   Clo     Clo     Clo     Clo	         ! mixing TKE
+ad_LBC(isFsur) ==   Clo     Clo     Clo     Cha         ! free-surface
+ad_LBC(isUbar) ==   Clo     Clo     Clo     Fla         ! 2D U-momentum
+ad_LBC(isVbar) ==   Clo     Clo     Clo     Fla         ! 2D V-momentum
+ad_LBC(isUvel) ==   Clo     Clo     Clo     Rad         ! 3D U-momentum
+ad_LBC(isVvel) ==   Clo     Clo     Clo     Rad         ! 3D V-momentum
+ad_LBC(isMtke) ==   Clo     Clo     Clo     Rad	         ! mixing TKE
 
-ad_LBC(isTvar) ==   Clo     Clo     Clo     Clo \       ! temperature
-                    Clo     Clo     Clo     Clo         ! salinity
+ad_LBC(isTvar) ==   Clo     Clo     Clo     Rad \       ! temperature
+                    Clo     Clo     Clo     Rad         ! salinity
                     
 ! Set lateral open boundary edge volume conservation switch for
 ! nonlinear model and adjoint-based algorithms. Usually activated
@@ -185,12 +185,12 @@ ad_VolCons(north) ==  F                            ! northern boundary
 
 ! Time-Stepping parameters.
 
-      NTIMES == 9400
-          DT == 120.0d0
-     NDTFAST == 60
+      NTIMES == 86400
+          DT == 40.0d0
+     NDTFAST == 20
 
 ! Number of timesteps for computing observation impacts during the
-! analysis-forecast cycle.
+! analysis-forecast cycle (only use in specific set ups, see below).
 
   NTIMES_ANA == 2880                               ! analysis interval
   NTIMES_FCT == 2880                               ! forecast interval
@@ -228,7 +228,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
      NDEFQCK == 0
       NTSAVG == 1
         NAVG == 540
-     NDEFAVG == 0864000
+     NDEFAVG == 864000
       NTSDIA == 1
         NDIA == 540
      NDEFDIA == 864000
@@ -259,7 +259,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
 ! and adjoint-based algorithms: [1:NAT+NPT,Ngrids].
 
         TNU2 == 0.0d0  0.0d0                    ! m2/s
-        TNU4 == 2.0d0  0.0d0                    ! m4/s
+        TNU4 == 2*0.0d0                         ! m4/s
 
      ad_TNU2 == 0.0d0  0.0d0                    ! m2/s
      ad_TNU4 == 0.0d0  0.0d0                    ! m4/s
@@ -926,7 +926,7 @@ Dout(iTvdif) == T T     ! temp_vdiff, ...    vertical diffusion
 
      NFFILES == 1                          ! number of unique forcing files
 
-     FRCNAME == ./rivers_tracer_ale.nc               ! forcing file 1, grid 1
+     FRCNAME == roms_forcing.nc              ! forcing file 1, grid 1
 
 ! Output NetCDF file names, [1:Ngrids].
 

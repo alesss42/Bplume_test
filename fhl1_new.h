@@ -18,7 +18,7 @@
 #define UV_COR
 
 
-
+#define DJ_GRADPS
 #define TS_MPDATA
 #undef NONLIN_EOS
 #define SALINITY

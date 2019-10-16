@@ -235,9 +235,10 @@ plot(y_r(1,j_river1_range),dy_r(j_river1_range),'g-','linewidth',4);
 if 1
     socn = 34;
     ns1 = length(j_river1_range);
-    rout(1).X = (Lp - 1) * ones(ns1,1);
+%     rout(1).X = (Lp - 1) * ones(ns1,1);
+    rout(1).X = (Lp - 11) * ones(ns1,1);
 %     rout(1).X = (Lp) * ones(ns1,1);
-    rout(1).Y = j_river1_range -1;
+    rout(1).Y = j_river1_range-1;
     rout(1).D = 0 * ones(ns1,1); 
     rout(1).sig = -1 * ones(ns1,1);
     rout(1).id   =  1 * ones(ns1,1);
@@ -332,7 +333,8 @@ end
 end
 end
 
-% mask_rho(Lp,j)=0; 
+ mask_rho(Lp-10:end,:)=0; 
+% mask_rho(Lp-1,:)=0;
 %%
 for i=2:Lp,
   for j=1:Mp,
@@ -344,7 +346,8 @@ for i=1:Lp,
     vmask(i,j-1)=mask_rho(i,j)*mask_rho(i,j-1);
   end,
 end,
-
+% vmask(Lp,:) = 0;
+% vmask(Lp-1  ,:) = 0;
 
 for i=2:Lp,
   for j=2:Mp,

@@ -253,7 +253,8 @@ plot(Hz(:,j_channel,end),z_r(:,j_channel,end),'b-o'); hold on
 
     for i=1:Nsources
         Q_temp = Qr_flow(river_ID(i),:)/numcells(i);
-        river_transport(:,i)= sig(i) .* fac .* Q_temp;
+%         river_transport(:,i)= sig(i) .* fac .* Q_temp;
+        river_transport(:,i)= sig(i) .* Q_temp; % Trying something ASR
     end
 %%%%%%%%%%%%%%%%%%%
 

@@ -27,7 +27,7 @@
 #define SPLINES_VDIFF
 #define SPLINES_VVISC
 #undef T_PASSIVE
-#define FLOATS
+#undef FLOATS
 
 #undef RADIATION_2D
 
@@ -54,7 +54,7 @@
 
 
 #define GLS_MIXING
-#if defined GLS_MIXING || defined MY25_MIXING
+#if defined GLS_MIXING 
 # undef CANUTO_A
 # define N2S2_HORAVG
 # define RI_SPLINES

@@ -86,12 +86,12 @@
 !
 !                   1       2       3       4
 
-   LBC(isTvar) ==   Clo     Clo     Rad     Clo      ! idsed(:), compact
+   LBC(isTvar) ==   Clo     Clo     Clo     Rad      ! idsed(:), compact
 
 ! Adjoint-based algorithms can have different lateral boundary
 ! conditions keywords.
 
-ad_LBC(isTvar) ==   Clo     Clo     Rad     Clo      ! idsed(:), compact
+ad_LBC(isTvar) ==   Clo     Clo     Clo     Rad      ! idsed(:), compact
 
 !------------------------------------------------------------------------------
 !  General sediment bed model parameters.

@@ -11,6 +11,7 @@
 ** Application flag:   ESTUARY_TEST
 ** Input script:       roms_estuary_test.in
 **                     sediment_estuary_test.in
+** Modified by ASR 2019 for Beta_plume case 1
 */
 
 #define UV_LOGDRAG
@@ -24,8 +25,8 @@
 #define SALINITY
 #define MASKING
 #define SOLVE3D
-#define SPLINES_VDIFF
-#define SPLINES_VVISC
+#define SPLINES_VDIFF /* THIS IS NEW 2019 I THINK IT SUBSTITUTES SPLINES */
+#define SPLINES_VVISC /* THIS IS NEW 2019 I THINK IT SUBSTITUTES SPLINES */
 #undef T_PASSIVE
 #undef FLOATS
 
@@ -42,16 +43,6 @@
 #define ANA_SPFLUX
 #define ANA_BPFLUX
 
-#undef SPONGE
-#ifdef SPONGE
-# define MIX_S_TS
-# define MIX_S_UV
-# undef VISC_GRID
-# undef DIFF_GRID
-# define UV_VIS2
-# define TS_DIF2
-#endif
-
 
 #define GLS_MIXING
 #if defined GLS_MIXING 
@@ -60,40 +51,6 @@
 # define RI_SPLINES
 # define KANTHA_CLAYSON
 #endif
-
-#define SEDIMENT
-#ifdef SEDIMENT
-# define SUSPLOAD
-# define SED_DENS
-#endif
-
-
-#define DIAGNOSTICS_UV
-#define DIAGNOSTICS_TS
-#define AVERAGES
-#undef AVERAGES_AKV
-#undef AVERAGES_AKS
-
-#undef  SG_BBL
-#ifdef SG_BBL
-# undef  SG_CALC_ZNOT
-# undef  SG_LOGINT
-#endif
-
-#undef  MB_BBL
-#ifdef MB_BBL
-# undef  MB_CALC_ZNOT
-# undef  MB_Z0BIO
-# undef  MB_Z0BL
-# undef  MB_Z0RIP
-#endif
-
-#undef SSW_BBL
-#ifdef SSW_BBL
-# define SSW_CALC_ZNOT
-# undef  SSW_LOGINT
-#endif
-
 
 
 

@@ -48,6 +48,7 @@ grid_file='H5FlatW10S1E3_grid_ale.nc'  ;  %<-enter name of grid here ASR
 
 river_time = [0:3600:40*86400];                % 15 days   ASR
 
+
 grd =  get_roms_grid(grid_file);                % ASR
 [MP,LP] = size(grd.h);                         % ASR
 
@@ -253,8 +254,8 @@ plot(Hz(:,j_channel,end),z_r(:,j_channel,end),'b-o'); hold on
 
     for i=1:Nsources
         Q_temp = Qr_flow(river_ID(i),:)/numcells(i);
-%         river_transport(:,i)= sig(i) .* fac .* Q_temp;
-        river_transport(:,i)= sig(i) .* Q_temp; % Trying something ASR
+         river_transport(:,i)= sig(i) .* fac .* Q_temp;
+%         river_transport(:,i)= sig(i) .* Q_temp; % Trying something ASR
     end
 %%%%%%%%%%%%%%%%%%%
 
@@ -367,20 +368,23 @@ if NPT ~= 0
   end
 end
 
+% Change to amake time in days now, as the code suggests.
+river_time = river_time./86400;
+
 %%%%% plotting some initial fields
 
 figure;
 subplot(2,2,1)
-plot(river_time/86400,sum(river_transport,2));
+plot(river_time,sum(river_transport,2));
 xlabel('time'); title('discharge');
 subplot(2,2,2)
-plot(river_time/86400,squeeze(river_salt(:,end,:)));
+plot(river_time,squeeze(river_salt(:,end,:)));
 xlabel('time'); title('salinity');
 subplot(2,2,3)
-plot(river_time/86400,squeeze(river_mud_01(:,end,:)));
+plot(river_time,squeeze(river_mud_01(:,end,:)));
 xlabel('time'); title('sed. conc');
 subplot(2,2,4)
-plot(river_time/86400,squeeze(river_dye_01(:,end,:)));
+plot(river_time,squeeze(river_dye_01(:,end,:)));
 xlabel('time'); title('dye conc');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

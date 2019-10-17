@@ -236,7 +236,7 @@ if 1
     socn = 34;
     ns1 = length(j_river1_range);
 %     rout(1).X = (Lp - 1) * ones(ns1,1);
-    rout(1).X = (Lp - 11) * ones(ns1,1);
+    rout(1).X = (Lp - 1) * ones(ns1,1);
 %     rout(1).X = (Lp) * ones(ns1,1);
     rout(1).Y = j_river1_range-1;
     rout(1).D = 0 * ones(ns1,1); 
@@ -333,7 +333,7 @@ end
 end
 end
 
- mask_rho(Lp-10:end,:)=0; 
+ mask_rho(Lp,:)=0; 
 % mask_rho(Lp-1,:)=0;
 %%
 for i=2:Lp,
@@ -356,7 +356,7 @@ for i=2:Lp,
 end,
 
 % Coriolis parameter.
-f=1e-4 ;
+rho.f=1e-4*ones(Lp,Mp) ;
 
 % Angle of the grid is zero.
 angle=zeros(size(x_r));

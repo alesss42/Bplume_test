@@ -64,7 +64,7 @@
 !
 ! Application title.
 
-       TITLE = Sediment-Laden plume C1
+       TITLE = Sediment-Laden plume
 
 ! C-preprocessing Flag.
 
@@ -185,9 +185,9 @@ ad_VolCons(north) ==  F                            ! northern boundary
 
 ! Time-Stepping parameters.
 
-      NTIMES == 5400
-          DT == 80.0d0
-     NDTFAST == 40
+      NTIMES == 86400
+          DT == 40.0d0
+     NDTFAST == 20
 
 ! Number of timesteps for computing observation impacts during the
 ! analysis-forecast cycle (only use in specific set ups, see below).
@@ -222,7 +222,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
 ! Output history, quicksave, average, and diagnostic files parameters.
 
      LDEFOUT == T
-        NHIS == 60
+        NHIS == 180
      NDEFHIS == 864000
         NQCK == 0
      NDEFQCK == 0
@@ -418,7 +418,7 @@ LtracerSponge == F F                            ! temperature, salinity, inert
 ! (like river runoff) and to specify which tracer variables to consider:
 ! [1:NAT+NPT,Ngrids].  See glossary below for details.
 
-  LtracerSrc == T T T                        ! temperature, salinity, inert
+  LtracerSrc == T T F                        ! temperature, salinity, inert
 
 ! Logical switches (TRUE/FALSE) to read and process climatology fields.
 ! See glossary below for details.

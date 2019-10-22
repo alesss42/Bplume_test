@@ -123,7 +123,7 @@
           END DO
         END DO
       END DO
-#elif defined ESTUARY_TEST
+#elif defined FHL1_NEW
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
@@ -247,7 +247,7 @@
           END DO
         END DO
       END DO
-#elif defined ESTUARY_TEST
+#elif defined FHL1_NEW
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT

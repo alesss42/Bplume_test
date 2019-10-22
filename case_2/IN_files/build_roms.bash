@@ -108,7 +108,7 @@ export   ROMS_APPLICATION=FHL1_NEW
 # where all this project's files are kept.
 
 export        MY_ROOT_DIR=${HOME}/AleROMS
-export     MY_PROJECT_DIR=${HOME}/Betaplume/projects_roms/Test1
+export     MY_PROJECT_DIR=${HOME}/Betaplume/projects_roms/case_2
 
 # The path to the user's local current ROMS source code.
 #

@@ -45,13 +45,6 @@
 #define ANA_BPFLUX
 
 
-#define GLS_MIXING
-#if defined GLS_MIXING 
-# undef CANUTO_A
-# define N2S2_HORAVG
-# define RI_SPLINES
-# define KANTHA_CLAYSON
-#endif
 
 
 

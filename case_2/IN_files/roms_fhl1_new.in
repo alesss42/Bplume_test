@@ -185,7 +185,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
 
 ! Time-Stepping parameters.
 
-      NTIMES == 86400
+      NTIMES == 21600
           DT == 40.0d0
      NDTFAST == 20
 
@@ -283,14 +283,14 @@ LtracerSponge == F F                            ! temperature, salinity, inert
 ! Vertical mixing coefficients for tracers in nonlinear model and
 ! basic state scale factor in adjoint-based algorithms: [1:NAT+NPT,Ngrids]
 
-     AKT_BAK == 5.0d-6  5.0d-6  5.0d-6                 ! m2/s
+     AKT_BAK == 0.0d-6  0.0d-6  0.0d-6                 ! m2/s
 
   ad_AKT_fac == 1.0d0  1.0d0                    ! nondimensional
 
 ! Vertical mixing coefficient for momentum for nonlinear model and
 ! basic state scale factor in adjoint-based algorithms: [Ngrids].
 
-     AKV_BAK == 5.0d-6                          ! m2/s
+     AKV_BAK == 0.0d-6                          ! m2/s
     
   ad_AKV_fac == 1.0d0                           ! nondimensional
 

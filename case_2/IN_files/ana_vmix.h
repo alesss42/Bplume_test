@@ -102,7 +102,8 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)= 0+0*EXP(z_w(i,j,k)/50)+  &
+     &                 0*EXP(-(z_w(i,j,k)+h(i,j))/50)
           END DO
         END DO
       END DO
@@ -110,7 +111,7 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0+0*EXP(z_w(i,j,k)/5.0_r8)
           END DO
         END DO
       END DO
@@ -118,7 +119,7 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0+0*EXP(z_w(i,j,k)/1500.0_r8)
           END DO
         END DO
       END DO
@@ -142,7 +143,7 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0+0*EXP(z_r(i,j,k)/10.0_r8)
           END DO
         END DO
       END DO
@@ -150,8 +151,10 @@
       DO k=1,N(ng)-1                         !  vonkar*ustar*z*(1-z/D)
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
-            Akt(i,j,k,itemp)=Akv(i,j,k)*0.49_r8/0.39_r8
+            Akv(i,j,k)=0*(h(i,j)+z_w(i,j,k))*                    &
+     &                 (0-(h(i,j)+z_w(i,j,k))/                     &
+     &                  (h(i,j)+zeta(i,j,knew)))
+            Akt(i,j,k,itemp)=Akv(i,j,k)*0/0.39_r8
             Akt(i,j,k,isalt)=Akt(i,j,k,itemp)
           END DO
         END DO
@@ -160,7 +163,9 @@
       DO k=1,N(ng)-1                         !  vonkar*ustar*z*(1-z/D)
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0*0.01_r8*(h(i,j)+z_w(i,j,k))*             &
+     &                 (1.0_r8-(h(i,j)+z_w(i,j,k))/                     &
+     &                  (h(i,j)+zeta(i,j,knew)))
           END DO
         END DO
       END DO
@@ -168,7 +173,9 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0*(h(i,j)+z_w(i,j,k))*                    &
+     &                 (0-(h(i,j)+z_w(i,j,k))/                     &
+     &                  (h(i,j)+zeta(i,j,knew)))
           END DO
         END DO
       END DO
@@ -176,7 +183,9 @@
       DO k=1,N(ng)-1                         !  vonkar*ustar*z*(1-z/D)
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0*0*(h(i,j)+z_w(i,j,k))*           &
+     &                 (0-(h(i,j)+z_w(i,j,k))/                     &
+     &                  (h(i,j)+zeta(i,j,knew)))
           END DO
         END DO
       END DO
@@ -184,7 +193,7 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akv(i,j,k)=0
+            Akv(i,j,k)=0+0*EXP(z_w(i,j,k)/150.0_r8)
           END DO
         END DO
       END DO
@@ -224,7 +233,8 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akt(i,j,k,itemp)=0
+            Akt(i,j,k,itemp)=0+                                &
+     &                       0*EXP(z_w(i,j,k)/5.0_r8)
           END DO
         END DO
       END DO
@@ -259,8 +269,8 @@
       DO k=1,N(ng)-1
         DO j=JstrT,JendT
           DO i=IstrT,IendT
-            Akt(i,j,k,itemp)=1.0E-05_r8+                                &
-     &                       2.0E-06_r8*EXP(z_r(i,j,k)/10.0_r8)
+            Akt(i,j,k,itemp)=0+                                &
+     &                       0*EXP(z_r(i,j,k)/10.0_r8)
             Akt(i,j,k,isalt)=Akt(i,j,k,itemp)
           END DO
         END DO

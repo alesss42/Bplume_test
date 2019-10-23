@@ -157,7 +157,7 @@ export     MY_PROJECT_DIR=${HOME}/Betaplume/projects_roms/case_2
 #export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DDIAGNOSTICS_TS"
 #export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DDIAGNOSTICS_UV"
 
- export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DGLS_MIXING"
+# export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DGLS_MIXING"
 #setenv      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DMY25_MIXING"
 
 #--------------------------------------------------------------------------

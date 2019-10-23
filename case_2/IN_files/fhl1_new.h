@@ -8,7 +8,7 @@
 **
 ** Options for Estuary with Sediment Transport Test.
 **
-** Application flag:   ESTUARY_TEST
+** Application flag:   FHL1_NEW.h
 ** Input script:       roms_estuary_test.in
 **                     sediment_estuary_test.in
 ** Modified by ASR 2019 for Beta_plume case 1

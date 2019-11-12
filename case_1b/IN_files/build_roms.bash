@@ -157,7 +157,7 @@ export     MY_PROJECT_DIR=${HOME}/betaplume/case_1b
 #export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DDIAGNOSTICS_TS"
 #export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DDIAGNOSTICS_UV"
 
- export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DGLS_MIXING"
+# export      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DGLS_MIXING"
 #setenv      MY_CPP_FLAGS="${MY_CPP_FLAGS} -DMY25_MIXING"
 
 #--------------------------------------------------------------------------
@@ -183,7 +183,7 @@ export     MY_PROJECT_DIR=${HOME}/betaplume/case_1b
 #export              FORT=pgi
 
 #export         USE_DEBUG=on            # use Fortran debugging flags
-#export         USE_LARGE=on            # activate 64-bit compilation
+export         USE_LARGE=on            # activate 64-bit compilation
  export       USE_NETCDF4=on            # compile with NetCDF-4 library
 #export          USE_HDF5=on            # compile with HDF5 library
 #export   USE_PARALLEL_IO=on            # Parallel I/O with NetCDF-4/HDF5
@@ -218,8 +218,8 @@ fi
 # If applicable, use my specified library paths.
 #--------------------------------------------------------------------------
 
- export USE_MY_LIBS=yes            # use system default library paths
-#export USE_MY_LIBS=yes           # use my customized library paths
+# export USE_MY_LIBS=no            # use system default library paths
+export USE_MY_LIBS=yes           # use my customized library paths
 
 MY_PATHS=${COMPILERS}/my_build_paths.bash
 

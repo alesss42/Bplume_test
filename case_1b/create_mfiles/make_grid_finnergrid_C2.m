@@ -1,7 +1,7 @@
 % M file to create the grid. This will be a combination of JW script with
 % Julies. 
 clearvars
-fname = 'grid_case2_finergrid_ale.nc';
+fname = 'grid_case2_finergrid01_ale.nc';
 %% ADDITION FROM JW
 % for all use:
     spherical='F';
@@ -10,12 +10,12 @@ fname = 'grid_case2_finergrid_ale.nc';
 %%
 
 % construct ESTUARY grid.
-L_east   =  20e3;
-L_west   = 130e3;
+L_east   =  0e3;
+L_west   = 100e3;
 pt_tot   = 200;
 dx1      = 0.5e3; % Smallest grid size in the x directionv
 dx2      =  10e3;
-Lx_h_east = 10e3;
+Lx_h_east = 200e3;
 Lx_h_west = 50e3;
 
 i_pt_east = round(Lx_h_east/dx1);
@@ -26,7 +26,7 @@ r_pt_west = 10;
 % Creates a dx than increses as tan to (dx2+dx1). There is no zero
 i_temp    = [1:pt_tot];
 ff_east   = 0.5 * ( tanh( (i_temp-(i_pt_east+r_pt_east))/r_pt_east ) + 1 );
-dx_east   = ff_east*dx2 + dx1; 
+dx_east   = ff_east*dx2 + dx1 ;
 xx_east   = cumsum(dx_east); % Distance vectour in the east
 [aa,i_eastbc] = min(abs(xx_east - L_east));
 
@@ -37,7 +37,8 @@ xx_west   = cumsum(dx_west);
 [aa,i_westbc] = min(abs(xx_west - L_west));
 
 % Combined
-dx_r = [dx_west(i_westbc:-1:1) dx_east(1:i_eastbc)];
+dx_r = [dx_west(i_westbc:-1:1) dx_east(1:100)];
+
 
 
 %%

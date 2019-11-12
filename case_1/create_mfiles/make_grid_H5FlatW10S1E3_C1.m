@@ -1,5 +1,6 @@
 % M file to create the grid. This will be a combination of JW script with
 % Julies. 
+clearvars
 fname = 'H5FlatW10S1E3_grid_ale.nc';
 %% ADDITION FROM JW
 % for all use:
@@ -7,9 +8,6 @@ fname = 'H5FlatW10S1E3_grid_ale.nc';
     projection='mercator';
 
 %%
-
-
-
 % construct ESTUARY grid.
 L_east   =  50e3;
 L_west   = 100e3;
@@ -42,7 +40,7 @@ dx_r = [dx_west(i_westbc:-1:1) dx_east(1:i_eastbc)];
 
 
 %%
-if 0
+if 1
 f1 = figure;
 subplot(1,2,1)
 plot(dx_east(1:i_eastbc),'b-o'); hold on
@@ -210,7 +208,7 @@ disp(['distance between last high-res point to north bc = ',num2str(-L3/1e3),' k
 % Construct grid topography.
 h_min         = 05;                  % coastal wall depth
 h_channel_max = 05;                  % channel depth
-slope_land    = 0;             % landward slope
+slope_land = 0.0e-4;            % landward slope
 slope_sea     = 1.0e-3;             % seaward slope
 
 

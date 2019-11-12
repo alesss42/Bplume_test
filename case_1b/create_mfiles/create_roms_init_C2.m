@@ -97,7 +97,7 @@
 
 %5) Obtain grid information.
 %     and river info
-   grid_file  = 'grid_case2_finergrid_ale.nc' ;  %<-enter name of grid here
+   grid_file  = 'grid_case2_finergrid01_ale.nc' ;  %<-enter name of grid here
    load('riverfile_ale.mat');   %ASR
    
     river_Xposition = rout(1).X(:);  % ASR

@@ -102,13 +102,13 @@ done
 # determine the name of the ".h" header file with the application
 # CPP definitions.
 
-export   ROMS_APPLICATION=FHL1_NEW
+export   ROMS_APPLICATION=FHL1_NEW_nm
 
 # Set a local environmental variable to define the path to the directories
 # where all this project's files are kept.
 
 export        MY_ROOT_DIR=${HOME}/AleROMS
-export     MY_PROJECT_DIR=${HOME}/Betaplume/projects_roms/case_2
+export     MY_PROJECT_DIR=${HOME}/Betaplume/projects_roms/case_2b
 
 # The path to the user's local current ROMS source code.
 #
@@ -218,8 +218,8 @@ fi
 # If applicable, use my specified library paths.
 #--------------------------------------------------------------------------
 
- export USE_MY_LIBS=no            # use system default library paths
-#export USE_MY_LIBS=yes           # use my customized library paths
+# export USE_MY_LIBS=no            # use system default library paths
+export USE_MY_LIBS=yes           # use my customized library paths
 
 MY_PATHS=${COMPILERS}/my_build_paths.bash
 

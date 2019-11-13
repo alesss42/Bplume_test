@@ -40,7 +40,7 @@
 forc_file='rivers_tracer_ale_C2.nc';
 
 % If your adding a grid file uncomment below and add name (ASR)
-grid_file='grid_case2_finergrid_ale.nc'  ;  %<-enter name of grid here ASR
+grid_file='grid_case2_finergrid01_ale.nc'  ;  %<-enter name of grid here ASR
 
 %2) Enter times of river forcings data, in seconds.
 %   This time needs to be consistent with model time (ie dstart and time_ref).
@@ -79,7 +79,7 @@ end
     theta_b = 0.4;  
     Tcline =  5; 
     Vtransform = 2;  % Added by ASR
-    Vstretching = 2; % Added by ASR
+    Vstretching = 4; % Added by ASR
 
 %5) Enter value of h, Lm, and Mm.
 %   This info can come from a grid file or user supplied here.

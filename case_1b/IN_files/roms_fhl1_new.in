@@ -91,7 +91,7 @@ GridsInLayer =  1
 ! Grid dimension parameters. See notes below in the Glossary for how to set
 ! these parameters correctly.
 
-          Lm == 135           ! Number of I-direction INTERIOR RHO-points
+          Lm == 209           ! Number of I-direction INTERIOR RHO-points
           Mm == 306             ! Number of J-direction INTERIOR RHO-points
            N == 30            ! Number of vertical levels
 
@@ -185,7 +185,7 @@ ad_VolCons(north) ==  F                            ! northern boundary
 
 ! Time-Stepping parameters.
 
-      NTIMES == 43200
+      NTIMES == 86400
           DT == 40.0d0
      NDTFAST == 20
 
@@ -360,7 +360,7 @@ LtracerSponge == F F                            ! temperature, salinity, inert
 ! stretching function (see below for details), [1:Ngrids].
 
   Vtransform == 2                          ! transformation equation
- Vstretching == 2	                          ! stretching function
+ Vstretching == 4	                          ! stretching function
 
 ! Vertical S-coordinates parameters (see below for details), [1:Ngrids].
 
@@ -852,7 +852,7 @@ Dout(iTvdif) == T T     ! temp_vdiff, ...    vertical diffusion
 
 ! Input NetCDF file names, [1:Ngrids].
 
-     GRDNAME == ./grid_case2_finergrid_ale.nc
+     GRDNAME == ./grid_case2_finergrid01_ale.nc
      ININAME == ./tracer_init_ale_C2.nc
      ITLNAME == roms_itl.nc
      IRPNAME == roms_irp.nc

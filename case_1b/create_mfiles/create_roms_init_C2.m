@@ -65,7 +65,7 @@
     s_ocean = 34;       % enter ocean salinity by SNC
     C_river = 0;      % enter river sediment concentration by SNC
     dye_ini = 0;       % initial dye concentration
-    i_mouth = 115;     %
+    i_mouth = 111;     %
 
 %3) Enter start time of initial file, in seconds.
 %   This time needs to be consistent with model time (ie dstart and time_ref).
@@ -91,7 +91,7 @@
       theta_b = 0.4;
       Tcline =  5.0;
       Vtransform = 2;
-      Vstretching = 2;
+      Vstretching = 4;
       N = 30;
     end
 

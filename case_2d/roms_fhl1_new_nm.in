@@ -146,8 +146,8 @@ GridsInLayer =  1
 !                   1       2       3       4
 
    LBC(isFsur) ==   Clo     Clo     Clo     Cha         ! free-surface
-   LBC(isUbar) ==   Clo     Clo     Clo     Fla         ! 2D U-momentum
-   LBC(isVbar) ==   Clo     Clo     Clo     Fla         ! 2D V-momentum
+   LBC(isUbar) ==   Clo     Clo     Clo     Gra         ! 2D U-momentum
+   LBC(isVbar) ==   Clo     Clo     Clo     Gra         ! 2D V-momentum
    LBC(isUvel) ==   Clo     Clo     Clo     Rad         ! 3D U-momentum
    LBC(isVvel) ==   Clo     Clo     Clo     Rad         ! 3D V-momentum
    LBC(isMtke) ==   Clo     Clo     Clo     Rad	         ! mixing TKE
@@ -159,8 +159,8 @@ GridsInLayer =  1
 ! conditions keywords.
 
 ad_LBC(isFsur) ==   Clo     Clo     Clo     Cha         ! free-surface
-ad_LBC(isUbar) ==   Clo     Clo     Clo     Fla         ! 2D U-momentum
-ad_LBC(isVbar) ==   Clo     Clo     Clo     Fla         ! 2D V-momentum
+ad_LBC(isUbar) ==   Clo     Clo     Clo     Gra         ! 2D U-momentum
+ad_LBC(isVbar) ==   Clo     Clo     Clo     Gra         ! 2D V-momentum
 ad_LBC(isUvel) ==   Clo     Clo     Clo     Rad         ! 3D U-momentum
 ad_LBC(isVvel) ==   Clo     Clo     Clo     Rad         ! 3D V-momentum
 ad_LBC(isMtke) ==   Clo     Clo     Clo     Rad	         ! mixing TKE

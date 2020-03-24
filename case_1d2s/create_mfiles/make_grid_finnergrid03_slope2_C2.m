@@ -210,7 +210,7 @@ disp(['distance between last high-res point to north bc = ',num2str(-L3/1e3),' k
 h_min         = 05;                  % coastal wall depth
 h_channel_max = 05;                  % channel depth
 slope_land    = 0;             % landward slope
-slope_sea     = 1.0e-4;             % seaward slope
+slope_sea     = .5e-3;             % seaward slope
 
 
 W_river1  = 10e3;        % width of river
